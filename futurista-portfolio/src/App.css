@@ -1,0 +1,134 @@
+body, .futuristic-bg {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Orbitron', 'Rajdhani', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+.main-title {
+  font-size: 2.8rem;
+  letter-spacing: 0.15em;
+  color: #ff003c;
+  text-shadow: 0 0 12px #ff003c88, 0 0 2px #fff;
+  margin: 0;
+}
+.subtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  margin-bottom: 2rem;
+}
+.glass-card {
+  background: rgba(20, 20, 20, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #ff003c33, 0 1.5px 0 #ff003c;
+  border: 1.5px solid #ff003c55;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+  color: #fff;
+  text-align: center;
+}
+.bg-anim {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.red-neon-line {
+  width: 80vw;
+  height: 2px;
+  margin: 1.5rem 0;
+  background: linear-gradient(90deg, transparent, #ff003c 60%, transparent);
+  filter: blur(0.5px) brightness(1.5);
+  box-shadow: 0 0 16px #ff003c88, 0 0 2px #fff;
+  animation: neon-move 3s linear infinite alternate;
+}
+.red-neon-line:nth-child(2) {
+  animation-delay: 1s;
+  opacity: 0.7;
+}
+.red-neon-line:nth-child(3) {
+  animation-delay: 2s;
+  opacity: 0.5;
+}
+@keyframes neon-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
+}
+
+.projects-section {
+  padding: 2rem 0 3rem 0;
+  text-align: center;
+}
+.section-title {
+  color: #ff003c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px #ff003c88;
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.project-card {
+  background: rgba(30, 0, 20, 0.7);
+  border-radius: 16px;
+  border: 1.5px solid #ff003c55;
+  box-shadow: 0 2px 24px #ff003c33, 0 1.5px 0 #ff003c;
+  padding: 1.5rem 2rem;
+  min-width: 220px;
+  max-width: 260px;
+  color: #fff;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 4px 32px #ff003c99, 0 1.5px 0 #fff;
+  border-color: #ff003c;
+}
+.project-card h3 {
+  color: #ff003c;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+.project-card p {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .glass-card {
+    padding: 1.2rem 1rem;
+  }
+}
